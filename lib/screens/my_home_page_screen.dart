@@ -9,6 +9,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String image = 'https://wallpapercave.com/wp/wp2668082.jpg';
+
   String image1 = 'https://wallpapercave.com/wp/wp2668082.jpg';
   String image2 =
       "https://www.basnews.com/media/k2/items/cache/481ddd73145553a85d833b367570fa92_L.jpg?1576743128";
