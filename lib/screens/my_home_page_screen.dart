@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_kurdistan_center/necessary_files/data_model.dart';
 import 'package:hello_kurdistan_center/necessary_files/dummy_data.dart';
 import 'package:hello_kurdistan_center/widgets/details_screen.dart';
 import 'package:hello_kurdistan_center/widgets/image_button.dart';
@@ -29,21 +30,26 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(20.0),
           itemCount: someDummyData.length,
           itemBuilder: (context, index) {
+            List<DataModel> _data = someDummyData.map(
+              (element) {
+                return DataModel.fromMap(element);
+              },
+            ).toList();
             return ImageButton(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => DetailsScreen(
-                      title: someDummyData[index]['title'],
-                      image: someDummyData[index]['image'],
-                      description: someDummyData[index]['description'],
+                      title: _data[index].title,
+                      image: _data[index].image,
+                      description: _data[index].description,
                     ),
                   ),
                 );
               },
-              title: someDummyData[index]['title'],
-              image: someDummyData[index]['image'],
+              title: _data[index].title,
+              image: _data[index].image,
             );
           },
         ),
